@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .my-btn{
+            width: 100px;
+            height: 50px;
+            border-radius:4px;
+            background-color: #409eff;
+            color:#fff;
+            line-height: 50px;
+            text-align: center;
+            border:none;
+            outline:none;
+        }
+        .my-btn:active{
+            background-color: #3a8ee6;
+        }
+        .caret{
+            border:10px solid transparent;
+            border-top:10px solid #000;
+            position:relative;
+            top:13px;
+            right:2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <my-btn>第一个按钮</my-btn>
+        <my-btn>第二个按钮</my-btn>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        //声明一个组件
+        var myBtn = {
+            template:`
+            <button class="my-btn">
+                <i class="caret"></i><slot></slot>
+            </button>
+            `
+        };
+        //全局注册组件
+        Vue.component("my-btn",myBtn)
+        const app = new Vue({
+            el:"#app"
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+        .done {
+            text-decoration: line-through;
+        }
+        .is-done {
+            text-decoration: line-through;
+        }
+
+        .my-btn {
+            width: 100px;
+            height: 50px;
+            border-radius: 4px;
+            background: #409eff;
+            color: #fff;
+            line-height: 50px;
+            text-align: center;
+            border: none;
+            outline: none;
+        }
+
+        .my-btn:active {
+            background: #3a8ee6;
+        }
+
+        .down {
+            display: inline-block;
+            border: 10px solid transparent;
+            border-top: 10px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button class="my-btn" @click="handleClick">切换显示</button>
+        <div class="box" v-if="isShow"></div>
+        <div>
+            <ul>
+                <li v-for="(item,index) in arr" :class="{done:item.isdone}" @click="toggleTodo(index)">
+                    {{item.todo}}
+                </li>
+                <input type="checkbox" :checked="isShow">
+            </ul>
+        </div>
+    </div>
+
+    <script src="../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+                isShow:true,
+                arr:[
+                    {
+                        todo:'吃饭',
+                        isdone:false
+                    },{
+                        todo:'睡觉',
+                        isdone:false
+                    },
+                    {
+                        todo:'打豆豆',
+                        isdone:true
+                    }
+                ]
+            },
+            methods:{
+                handleClick(){
+                    this.isShow = !this.isShow
+                },
+                toggleTodo(index){
+                    this.arr[index].isdone = !this.arr[index].isdone
+                }
+            }
+        })
+    </script>
+</body>
+</html>

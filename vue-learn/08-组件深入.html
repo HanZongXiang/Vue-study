@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .my-btn{
+        width: 100px;
+        height: 50px;
+        border-radius:4px;
+        background-color: #409eff;
+        color:#fff;
+        line-height: 50px;
+        text-align: center;
+        border:none;
+        outline:none;
+    }
+    .my-btn:active{
+        background-color: #3a8ee6;
+    }
+</style>
+<body>
+    <div id="app">
+        <my-container></my-container>
+        <my-container></my-container>
+        <my-container></my-container>
+        <my-container></my-container>
+        <my-container></my-container>
+        <my-container></my-container>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const myContainer = {
+            template:`
+            <h1 style="color:#0ff;line-height: 50px">
+                <button class="my-btn" @click="handleReduce">-</button>
+                <strong>{{num}}</strong>
+                <button class="my-btn" @click="handleAdd">+</button>
+            </h1>
+            `,
+            data(){
+                return {
+                    num:0
+                }
+            },
+            methods:{
+                handleReduce(){
+                    this.num--
+                },
+                handleAdd(){
+                    this.num++
+                }
+            }
+        };
+        // Vue.component("my-container",myContainer)
+        const app = new Vue({
+            components:{
+                myContainer
+            },
+            el:"#app",
+            data:{
+               msg:"hello world"
+            }
+        })
+    </script>
+</body>
+</html>

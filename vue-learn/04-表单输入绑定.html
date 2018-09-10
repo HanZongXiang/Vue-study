@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <p>用户名：<input type="text" v-model="username"></p>
+        <p>密码：<input type="password" v-model="password"></p>
+        <button v-on:click="showForm">弹出数据</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+                username:"",
+                password:""
+            },
+            methods:{
+                showForm(){
+                    alert(this.username)
+                    alert(this.password)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
