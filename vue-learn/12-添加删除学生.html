@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            text-align: center;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            border-collapse: collapse;
+        }
+        td,th{
+            border-left: 1px solid #000;
+            border-top:1px solid #000;
+        }
+        tr:nth-child(2n-1){
+            background: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>姓名：<input type="text" v-model="username"></p>
+        <p>ID：<input type="text" v-model="userid" @keyup.enter="handleAdd"></p>
+        <button @click="add">添加学生</button>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>入学时间</th>
+                <th>操作</th>
+            </tr>
+            <tr v-for="(item,index) in arr">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.date}}</td>
+                <td><a href="javascript:void(0)" @click="del(index)">删除</a></td>
+            </tr>
+        </table>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el:"#app",
+            data:{
+                arr:[
+                    {
+                        id:0,
+                        name:"张三",
+                        date:new Date()
+                    },
+                    {
+                        id:1,
+                        name:"李四",
+                        date:new Date()
+                    }
+                ],
+                username:"",
+                userid:""
+            },
+            methods:{
+                del(index){
+                    this.arr.splice(index,1)
+                },
+                add(){
+                    this.arr.push({
+                        name:this.username,
+                        id:this.userid,
+                        date:new Date()
+                    });
+                    this.username = "";
+                    this.userid = ""
+                },
+                handleAdd(){
+                    this.add();
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>
