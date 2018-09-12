@@ -14,6 +14,12 @@ import  axios  from "axios";
 
 export default {
   name:"login",
+  created(){
+    // console.log(this.$router)
+    // console.log(this.$route)
+    console.log(this.$route.query)
+    console.log(this.$route.params)
+  },
   data() {
       return {
         username:'',
@@ -22,9 +28,12 @@ export default {
    },
    methods:{
        handleSubmit(){
-         axios.post('http://localhost:3000/login').then(res=>{
+         axios.post('http://localhost:3000/login',{
+           username:this.username,
+           password:this.password
+         }).then(res=>{
            if(res.data.code == 200){
-             alert('登录成功'),
+             alert('登录成功');
              this.$router.push('/')
            }
          })
