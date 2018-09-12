@@ -35,7 +35,44 @@ const router = new Router({
             meta:{
               title:'登录'
             },
-        }
+        },
+        {
+            path:'/main',
+            component:()=>import('../view/Layout/index'),
+            name:'main',
+            meta:{
+              title:'主页'
+            },
+            redirect:'./main/home',
+            children:[
+              {
+                path:'home',
+                component:home,
+                name:"home1",
+                //声明页面标题
+                meta:{
+                  title:'首页'
+                }
+              },
+              // 动态路由匹配
+              {
+                path:'about/:id',
+                component:()=>import('../components/about'),
+                name:"about1",
+                meta:{
+                  title:'about1'
+                },
+              },
+              {
+                path:'login',
+                component:()=>import('../components/login'),
+                name:'login1',
+                meta:{
+                  title:'登录'
+                },
+              },
+            ]
+        },
     ]
 })
 

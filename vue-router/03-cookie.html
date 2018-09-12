@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie</title>
+</head>
+<body>
+
+</body>
+<script>
+    // let date = new Date();
+    // date.setMinutes();
+    // let dateStr = date.toUTCString();
+    // console.log(dateStr);
+    // let cookie = document.cookie;
+    // document.cookie = "name=wangcai";
+    // document.cookie = "age=110;expires=" + dateStr;
+    // console.log(document.cookie)
+
+    // document.cookie = "name=zhangsan";
+    // document.cookie = "sex=man";
+
+    function getCookie() {
+        let obj = {};
+        let cookieString = document.cookie;
+        let cookieArr = cookieString.split(';');
+
+        // console.log(cookieArr)
+        cookieArr.forEach(item => {
+            let newArr = item.split('=');
+            // console.log(newArr);
+            let key = newArr[0].trim();
+            let value = newArr[1];
+            obj[key] = value;
+        })
+        return obj;
+    };
+    let cookieObj = getCookie();
+    console.log(cookieObj);
+
+    //expires以秒为单位
+    function setCookie(key, value, expires) {
+        if(!expires){
+            document.cookie = `${key}=${value}`
+        } else {
+            let date = new Date();
+            let unix = date.getTime();
+            unix = expires * 1000 + unix;
+
+            let newDateStr = new Date(unix).toUTCString();
+            document.cookie = `${key}=${value};expires=${newDateStr}`
+        }
+    }
+
+    // setCookie('hobby','run');
+    // setCookie('start','lisi','60')
+    setCookie('first','wangwu','120')
+    function removeCookie(key) {
+        let value = '';
+        let date = new Date().getTime();
+        date = date - 100;
+        let dateStr = new Date(date).toUTCString();
+        document.cookie = `${key}=${value};expires=${dateStr}`
+    }
+    setTimeout(()=>{
+        removeCookie('first');
+    },10000)
+</script>
+</html>
