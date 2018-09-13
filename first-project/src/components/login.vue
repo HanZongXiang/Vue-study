@@ -34,7 +34,9 @@ export default {
          }).then(res=>{
            if(res.data.code == 200){
              alert('登录成功');
-             this.$router.push('/')
+             this.$router.push('/main/home')
+           }else{
+             alert('登录失败')
            }
          })
        }
