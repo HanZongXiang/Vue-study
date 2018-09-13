@@ -71,6 +71,14 @@ const router = new Router({
                   title:'登录'
                 },
               },
+              {
+                path:'vuexDemo',
+                component: () => import('../components/vuexDemo'),
+                name:'demo1',
+                meta:{
+                  title:'vuexDemo'
+                }
+              }
             ]
         },
     ]

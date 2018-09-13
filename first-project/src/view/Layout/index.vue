@@ -51,13 +51,16 @@
     text-align: center;
     background: #409eff;
     height: 80%;
+    margin:0;
   }
   .nav{
     ul{
       padding-left:0;
+      padding-top: 30px;
     }
     li{
       list-style: none;
+      line-height: 30px;
       height: 30px;
       width: $width;
       text-align: center;

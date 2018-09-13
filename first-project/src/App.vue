@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-     <!--<img src="./assets/logo.png">
+     <!-- <img src="./assets/logo.png">
     &lt;!&ndash; <HelloWorld/> &ndash;&gt;
     <router-view></router-view>
     <div>
@@ -16,7 +16,7 @@
           <router-link to='/login'>登录</router-link>
         </li>
       </ul>
-    </div>-->
+    </div> -->
     <router-view></router-view>
   </div>
 </template>
@@ -33,6 +33,7 @@ export default {
 </script>
 
 <style>
+*{margin:0;padding: 0;}
 /*#app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
