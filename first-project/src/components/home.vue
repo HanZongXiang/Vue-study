@@ -139,5 +139,5 @@ h2{
   height: 3px;
   background: black;
 }
-input{height: 50px;}
+input{height: 48px;font-size: 26px;}
 </style>

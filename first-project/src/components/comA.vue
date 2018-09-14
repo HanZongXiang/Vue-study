@@ -3,10 +3,13 @@
       <h3>
        小计： {{$store.getters.totalPrice}}
       </h3>
+      <p>{{msg}}</p>
   </div>
 </template>
 
 <script>
+// import bus from "../bus";
+
 export default {
   name:'comA',
   // props:{
@@ -19,11 +22,16 @@ export default {
   // },
   data() {
     return {
-
+      msg:''
     }
    },
   components: {
 
+  },
+  created () {
+    this.$bus.$on('sendData',msg => {
+      this.msg = msg
+    })
   },
   methods: {
 
@@ -47,5 +55,7 @@ export default {
         margin-top: 20px;
     }
 }
-
+p{
+  margin-top: 80px;
+}
 </style>

@@ -4,11 +4,14 @@
     <strong>{{count}}</strong>
     <button @click='add'>+</button>
     <!-- {{price}} -->
+    <br>
+    <button style="width:200px" @click="handleClick">兄弟组件传值</button>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
+// import bus from "../bus";
 
 export default {
   name:'comB',
@@ -19,7 +22,7 @@ export default {
   // },
   data() {
     return {
-
+      msg:'来自兄弟组件B的内容'
     }
    },
   components: {
@@ -33,6 +36,9 @@ export default {
     add () {
         // this.$emit('add')
         this.$store.commit('ADD_COUNT')
+    },
+    handleClick () {
+      this.$bus.$emit('sendData',this.msg)
     }
   },
   computed:{

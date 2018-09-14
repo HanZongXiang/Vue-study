@@ -48,4 +48,16 @@ export default {
 </script>
 
 <style>
+button{
+    width: 100px;
+    height: 50px;
+    border-radius:4px;
+    background-color: #000;
+    color:#fff;
+    line-height: 50px;
+    text-align: center;
+    font-size: 22px;
+    border:none;
+    outline:none;  
+  }
 </style>
