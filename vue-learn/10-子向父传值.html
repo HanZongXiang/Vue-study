@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .my-btn{
+        .my-btn {
             width: 100px;
             height: 50px;
-            border-radius:4px;
+            border-radius: 4px;
             background-color: #409eff;
-            color:#fff;
+            color: #fff;
             line-height: 50px;
             text-align: center;
-            border:none;
-            outline:none;
+            border: none;
+            outline: none;
         }
-        .my-btn:active{
+
+        .my-btn:active {
             background-color: #3a8ee6;
         }
     </style>
 </head>
+
 <body>
     <div id="app">
-        <my-btn v-bind:text="btnText" @to-you="getChild"></my-btn>
+        <my-btn v-bind:text="btnText"></my-btn>
+        <my-btn text="传值" @to-you="getChild">传值</my-btn>
     </div>
     <script src="../vue.js"></script>
     <script>
         const myBtn = {
-            props:{
-                text:{
-                    type:String
+            props: {
+                text: {
+                    type: String
                 }
             },
-            data(){
+            data() {
                 return {
-                    child:'来自子组件内部的值'
+                    child: '来自子组件内部的值'
                 }
             },
-            template:`
+            template: `
             <button class="my-btn" @click="toFather">{{text}}</button>
             `,
             //子向父传值利用events，$emit触发一个自定义事件
-            methods:{
-                toFather(){
-                    this.$emit('to-you',this.child)
+            methods: {
+                toFather() {
+                    this.$emit('to-you', this.child)
                 }
             }
         };
 
-        Vue.component('my-btn',myBtn);
+        Vue.component('my-btn', myBtn);
 
         const app = new Vue({
-            el:"#app",
-            data:{
-                btnText:"我的按钮"
+            el: "#app",
+            data: {
+                btnText: "我的按钮"
             },
-            methods:{
-                getChild(child){
+            methods: {
+                getChild(child) {
                     console.log(child);
                     this.btnText = child
                 }
@@ -64,4 +68,5 @@
         })
     </script>
 </body>
+
 </html>

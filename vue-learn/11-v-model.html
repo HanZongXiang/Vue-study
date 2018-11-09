@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
     <div id="app">
         <h3>父组件的值是：{{num1}}</h3>
@@ -13,57 +15,58 @@
     <script src="../vue.js"></script>
     <script>
         const myComponent = {
-            props:{
-                'my-num':{
-                    type:Number
+            props: {
+                'my-num': {
+                    type: Number
                 }
             },
-            template:`
+            template: `
             <div>
                 <button @click="reduce">-</button>
                 <strong>{{num}}</strong>
                 <button @click="add">+</button>
             </div>
             `,
-            data(){
+            data() {
                 return {
-                    num:this.myNum
+                    num: this.myNum
                 }
             },
-            methods:{
-                reduce(){
+            methods: {
+                reduce() {
                     this.$emit('reduce-parent')
                 },
-                add(){
+                add() {
                     this.$emit('add-parent')
                 }
             },
-            watch:{
-                myNum(val){
+            watch: {
+                myNum(val) {
                     this.num = val
                 }
             }
         };
         const app = new Vue({
-            components:{
+            components: {
                 myComponent
             },
-            el:"#app",
-            data:{
-                num1:110
+            el: "#app",
+            data: {
+                num1: 110
             },
-            methods:{
-                parentAdd(){
+            methods: {
+                parentAdd() {
                     this.num1++
                 },
-                addSelf(){
+                addSelf() {
                     this.num1++
                 },
-                reduceSelf(){
+                reduceSelf() {
                     this.num1--
                 }
             }
         })
     </script>
 </body>
+
 </html>

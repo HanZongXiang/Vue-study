@@ -6,17 +6,27 @@ import "nprogress/nprogress.css"
 Vue.use(Router)
 
 import home from "../components/home";
+import index from "@/view/index";
 
 const router = new Router({
     mode:'history',
     routes:[
         {
-            path:'/',
-            component:home,
-            name:"home",
+          path:'/',
+          component:home,
+          name:"home",
           //声明页面标题
           meta:{
               title:'首页'
+          }
+        },
+        {
+          path: '/index',
+          component: index,
+          name: "index",
+          //声明页面标题
+          meta: {
+            title: '组件'
           }
         },
         // 动态路由匹配

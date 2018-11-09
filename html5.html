@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /* video {
+      width: 400px;
+      height: 300px;
+    } */
+    /* div {
+      transition: all linear 1s;
+      width: 200px;
+      height: 200px;
+    }
+    .div {
+      transform: translate(300px,300px);
+      background: #f00;
+    } */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /* .news {
+      width: 405px;
+      border: 1px solid #000;
+      margin: 100px auto;
+    }
+    .news ul {
+      list-style: none;
+      width: 405px;
+      overflow: hidden;
+    }
+    .news ul li {
+      float: left;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background: #ff6700;
+      cursor: pointer;
+      margin-right: 1px;
+    }
+    .news li.active {
+      background: gold;
+    }
+    .news section {
+      height: 200px;
+      display: none;
+    }
+    .news section.current {
+      display: block;
+    } */
+  </style>
+  <!-- <script>
+    window.onload = function() {
+      var lis = document.getElementsByTagName('li')
+      var sections = document.getElementsByTagName('section')
+
+      for(let i = 0;i<lis.length;i++) {
+        lis[i].onclick = function() {
+          for(let j = 0;j<lis.length;j++) {
+            lis[j].classList.remove('active')
+            sections[j].classList.remove('current')
+          }
+        this.classList.add('active')
+        var sectionId = this.dataset.section
+        document.getElementById(sectionId).classList.add('current')
+        }
+      }
+    }
+  </script> -->
+</head>
+<body>
+  <!-- <progress max="100" value="10"></progress>
+  <span>0%</span> -->
+  <!-- <meter min="0" max="100" high="85" low="75" value="0"></meter>
+  <span>距离放学时间还有101分钟</span> -->
+  <!-- <fieldset>
+    <legend>登录表单</legend>
+    <form action="">
+      账号：<input type="text">
+      <br>
+      密码：<input type="password">
+      <br>
+      邮箱：<input type="email">
+      <br>
+      color：<input type="color">
+      <br>
+      电话：<input type="tel">
+      <br>
+      日期：<input type="date">
+      <br>
+      数字：<input type="number">
+      <br>
+      网址：<input type="url">
+      <br>
+      范围：<input type="range">
+      <br>
+      本地时间<input type="datetime-local">
+    </form>
+  </fieldset> -->
+  <!-- 城市：<input type="text" list="cities">
+  <datalist id="cities">
+    <option value="北京">北京</option>
+    <option value="上海">上海</option>
+    <option value="广州">广州</option>
+  </datalist> -->
+  <!-- <form action="">
+    <fieldset>
+      <legend>计算器</legend>
+      <input type="number"> + <input type="number"> = <output></output>
+      <input type="button" value="计算">
+    </fieldset>
+  </form> -->
+  <video src="./03移动端表单注意点.mp4" controls poster="./1-150G0234618.jpg"></video>
+  <button>播放</button>
+  <button>暂停</button>
+  <button>静音</button>
+  <button>1.5倍速</button>
+  <button>全屏</button>
+  <button>快进</button>
+  <!-- <audio src="https://api.mlwei.com/music/api/?key=523077333&type=url&id=003BRo9h4Suyp8&size=hq" controls loop autoplay="true"></audio> -->
+    <!-- <div>div</div>
+  <button>去掉类</button>
+  <button>添加类</button>
+  <button>切换类</button>
+  <button>判断类</button> -->
+  <!-- <img src="./1-150G0234618.jpg" alt="" data-his-name="山驴逼一号" data-career="攻城狮" style="width: 200px">
+  <button>获取</button>
+  <button>修改</button> -->
+  <!-- <div class="news">
+    <ul>
+      <li data-section="native" class="active">国内新闻</li>
+      <li data-section="global">国际新闻</li>
+      <li data-section="sports">体育新闻</li>
+      <li data-section="entertain" style="margin-right:0">娱乐新闻</li>
+    </ul>
+    <section id="native" class="current">国内新闻</section>
+    <section id="global">国际新闻</section>
+    <section id="sports">体育新闻</section>
+    <section id="entertain">娱乐新闻</section>
+  </div> -->
+  <!-- <input type="text" value="0" tabindex="1" autofocus required>
+  <input type="text" value="1" tabindex="4">
+  <input type="text" value="2" tabindex="2">
+  <input type="text" value="3" tabindex="3"> -->
+</body>
+<script>
+  // var progress = document.getElementsByTagName('progress')[0]
+  // var span = document.getElementsByTagName('span')[0]
+
+  // var timer = window.setInterval(() => {
+  //   progress.value++;
+  //   span.innerHTML = progress.value + "%"
+  //   if (progress.value >=progress.max) {
+  //     clearInterval(timer)
+  //   }
+  // },100)
+  // var meter = document.getElementsByTagName('meter')[0]
+  // var span = document.getElementsByTagName('span')[0]
+  // var timer = window.setInterval(() => {
+  //   meter.value++;
+  //   span.innerHTML = `距离放学时间还有${meter.max - meter.value}分钟`
+  //   if (meter.value >= meter.max) {
+  //     clearInterval(timer)
+  //   }
+  // },100)
+  // var inputs = document.getElementsByTagName('input')
+  // var output = document.getElementsByTagName('output')[0]
+  // inputs[2].onclick = function () {
+  //   output.innerHTML = parseInt(inputs[0].value) + parseInt(inputs[1].value)
+  // }
+  var video = document.getElementsByTagName('video')[0]
+  console.dir(video)
+  var btns = document.getElementsByTagName('button')
+  btns[0].onclick = function() {
+    video.play()
+  }
+  btns[1].onclick = function() {
+    video.pause()
+  }
+  btns[2].onclick = function() {
+    video.muted = !video.muted
+    this.innerHTML = video.muted ?  '不静音' : '静音'
+  }
+  btns[3].onclick = function() {
+    video.playbackRate = 1.5
+  }
+  btns[4].onclick = function() {
+    video.webkitDisplayingFullscreen = true
+  }
+  btns[5].onclick = function() {
+    var currentTime = video.currentTime
+    
+    video.currentTime = currentTime += 10
+  }
+  // var btns = document.getElementsByTagName('button')
+  // var div = document.getElementsByTagName('div')[0]
+  // btns[0].onclick = function() {
+  //   div.classList.remove('div')
+  // }
+  // btns[1].onclick = function () {
+  //   div.classList.add('div')
+  // }
+  // btns[2].onclick = function() {
+  //   div.classList.toggle('div')
+  // }
+  // btns[3].onclick = function() {
+  //   console.log(div.classList.contains('div'))
+  // }
+  // var img = document.getElementsByTagName('img')[0]
+  // var btns = document.getElementsByTagName('button')
+  // btns[0].onclick = function() {
+  //   alert(img.dataset.hisName+ ';' + img.dataset.career)
+  // }
+  // btns[1].onclick = function() {
+  //   img.dataset.hisName = '山驴逼二号',
+  //   img.dataset.career = '没有'
+  // }
+    // widow.navigator.geolocation.getCurrentPosition(successCallback,errorCallback,options)
+    // function successCallback(position) {
+    //   var long = position.coords.longitude;
+    //   var lat = position.coords.latitude;
+    //   console.log(`经度${long}纬度${lat}`)
+    // }
+</script>
+</html>
