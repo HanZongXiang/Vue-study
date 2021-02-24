@@ -21,7 +21,7 @@
       <todoList :todos="todos">
         <template  slot-scope="scope">
           <div>
-            {{scope.itemValue}}
+            {{scope.itemValue}}1111
           </div>
           <div>
             <span v-if="scope.itemValue.isComplete">✓</span>
