@@ -6,13 +6,13 @@
     <div class="nav">
       <ul>
         <li>
-          <router-link :to="{name:'home1'}">首页</router-link>
+          <router-link :to="{name:'home1'}">首页1</router-link>
         </li>
         <li>
-          <router-link to="about/998">详情页</router-link>
+          <router-link to="about/998">详情页2</router-link>
         </li>
         <li>
-          <router-link :to="{name:'login1'}">登录页</router-link>
+          <router-link :to="{name:'login1'}">登录页3</router-link>
         </li>
       </ul>
     </div>
